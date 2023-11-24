@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Les types en Python &#8212; NSI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/type_python';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NSI</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="variable.html">La variable en Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp_turtle.html">TP turtle</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/type_python.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Les types en Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types-de-nombres">Les types de nombres</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-type-chaine-de-caracteres">Le type chaine de caractères</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-type-construit-la-liste">Un type construit : la liste</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="les-types-en-python">
+<h1>Les types en Python<a class="headerlink" href="#les-types-en-python" title="Lien permanent vers cette rubrique">#</a></h1>
+<p>Chaque variable en Python possède un <strong>type</strong>. Selon la valeur attribuée à une variable, Python lui associe un type.</p>
+<p>Il existe différents types de variables qu’on peut classer en 2 catégories:</p>
+<ol class="arabic simple">
+<li><p>le type de base : entier, flottant, chaine de caractères, booléen, …</p></li>
+<li><p>le type construit : liste, dictionnaire, objet, …</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>En python, le type d’une variable peut changer selon le contexte. Une variable peut être un nombre puis devenir une chaine de caractères ou inversement.</p>
+</div>
+<section id="les-types-de-nombres">
+<h2>Les types de nombres<a class="headerlink" href="#les-types-de-nombres" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Une variable peut désigner un nombre. Ce nombre peut être de type <strong>entier</strong> ou de type <strong>flottant</strong> c’est à dire écrit avec une virgule (un point en fait).</p>
+<p>En Python, le type entier se note <strong>int</strong> et le type flottant se note <strong>float</strong>.</p>
+<p>On peut utiliser des <strong>opérateurs</strong> mathématiques comme la somme (+), la différence (-), le produit (*) et le quotient (/) pour effectuer des calculs.</p>
+<p>Selon l’opérateur, le résultat peut avoir un type différent des valeurs avant le calcul. Par exemple, le quotient de 2 nombres entiers peut donner un résultat à virgule, donc un flottant.</p>
+<p>En plus des 4 opérations mathématiques, il existe en Python des opérateurs mathématiques tels que:</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<ol class="arabic simple">
+<li><p>Les variables <cite>a</cite> et <cite>b</cite> ont des valeurs entières donc sont de type <strong>int</strong></p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span><span class="mi">5</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>On calcule le quotient des variables <cite>a</cite> et <cite>b</cite> que l’on affecte à la variable <cite>c</cite>:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span>
+</pre></div>
+</div>
+<p>La variable <cite>c</cite> a pour valeur <span class="math notranslate nohighlight">\(1.6\)</span> donc elle de type <strong>float</strong></p>
+<ol class="arabic simple" start="3">
+<li><p>On calcule le quotient entier des variables <cite>a</cite> et <cite>b</cite> que l’on affecte à la variable <cite>d</cite>:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>La variable <cite>d</cite> vaut <span class="math notranslate nohighlight">\(1\)</span> donc elle est de type <strong>int</strong>.</p>
+<ol class="arabic simple" start="4">
+<li><p>On calcule le reste entier des variables <cite>a</cite> et <cite>b</cite> que l’on affecte à la variable <cite>r</cite>:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">a</span><span class="o">%</span><span class="n">b</span>
+</pre></div>
+</div>
+<p>La variable <cite>r</cite> a pour valeur 3 donc elle est de type entier.</p>
+</div>
+</section>
+<section id="le-type-chaine-de-caracteres">
+<h2>Le type chaine de caractères<a class="headerlink" href="#le-type-chaine-de-caracteres" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Une variable de type <strong>string</strong> est une variable dont la valeur est
+constitué de lettres, chiffres, espaces et de tout caractère
+alphanumérique et de symboles.</p>
+<p>L’affectation d’une chaîne de caratère à une variable se fait en notant
+la chaine entre guillemets doubles “<em>chaine de caratères</em>” ou simples
+‘<em>chaine de caratères</em>’.</p>
+<p>Des chaines de caratères peuvent être réunies en une seule chaine de
+caratères par <strong>concaténation</strong>.</p>
+<p>Les opérateurs de concaténation sont la somme (+) et la multiplication
+(*).</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<ol class="arabic simple">
+<li><p>On crée les variables txt1 et txt2 de type string:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">txt1</span> <span class="o">=</span> <span class="s2">&quot;La vie est belle &quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">txt2</span> <span class="o">=</span> <span class="s1">&#39;mais cruelle parfois!&#39;</span>
+</pre></div>
+</div>
+<p>On concatène ces deux chaines dans la variable <cite>txt</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">txt</span> <span class="o">=</span> <span class="n">txt1</span> <span class="o">+</span> <span class="n">txt2</span>
+</pre></div>
+</div>
+<p>La variable <cite>txt</cite> contient la chaine « La vie est belle mais cruelle parfois! ».</p>
+<ol class="arabic simple" start="2">
+<li><p>On crée la variable <cite>motif</cite> qui contient 10 fois le caractère #.</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">motif</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span> <span class="o">*</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="un-type-construit-la-liste">
+<h2>Un type construit : la liste<a class="headerlink" href="#un-type-construit-la-liste" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>En Python, il existe le type <strong>list</strong> qui permet de regrouper <strong>plusieurs valeurs</strong> dans une même variable. Les valeurs d’une liste sont notées entre crochets et séparées par une virgule.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>On veut regrouper les nombres 4, 5 et 6 dans une même variable <cite>L</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Chaque valeur d’une liste est repérée par sa position appelée
+<strong>indice</strong>.</p>
+<ul class="simple">
+<li><p>La première valeur a pour indice <code class="docutils literal notranslate"><span class="pre">0</span></code>,</p></li>
+<li><p>la deuxième valeur a pour indice <code class="docutils literal notranslate"><span class="pre">1</span></code> et</p></li>
+<li><p>la dernière valeur a pour indice <code class="docutils literal notranslate"><span class="pre">le</span> <span class="pre">nombre</span> <span class="pre">de</span> <span class="pre">valeurs</span> <span class="pre">-</span> <span class="pre">1</span></code></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>On peut aussi utiliser des indices négatifs ! La dernière valeur d’une liste a pour indice <cite>-1</cite>, l’avant dernière a pour indice <cite>-2</cite>, etc.</p>
+</div>
+<p>On peut modifier les valeurs d’une liste en utilisant les indices et en
+réalisant une nouvelle affectation.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>La liste <cite>L</cite> contient les valeurs 4, 5 et 6.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>On modifie la première valeur de la liste <cite>L</cite>:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<p>La liste <cite>L</cite> contient les valeurs 8, 5 et 6.</p>
+<ol class="arabic simple" start="2">
+<li><p>On change la seconde valeur de la liste en la multipliant par 2:</p></li>
+</ol>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>La liste contient les valeurs 8, 10 et 6.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types-de-nombres">Les types de nombres</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-type-chaine-de-caracteres">Le type chaine de caractères</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-type-construit-la-liste">Un type construit : la liste</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Yannick Chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023,Yannick Chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
