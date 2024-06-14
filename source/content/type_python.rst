@@ -59,19 +59,13 @@ En plus des 4 opérations mathématiques, il existe en Python des opérateurs ma
 Le type chaine de caractères
 ----------------------------
 
-Une variable de type **string** est une variable dont la valeur est
-constitué de lettres, chiffres, espaces et de tout caractère
-alphanumérique et de symboles.
+Une variable de type **string** est une variable dont la valeur est constitué de lettres, chiffres, espaces et de tout caractère alphanumérique et de symboles.
 
-L’affectation d’une chaîne de caratère à une variable se fait en notant
-la chaine entre guillemets doubles “*chaine de caratères*” ou simples
-‘*chaine de caratères*’.
+L’affectation d’une chaîne de caractères à une variable se fait en notant la chaine entre guillemets doubles ``"chaine de caratères"`` ou simples ``'chaine de caratères'``.
 
-Des chaines de caratères peuvent être réunies en une seule chaine de
-caratères par **concaténation**.
+Des chaines de caratères peuvent être réunies en une seule chaine de caractères par **concaténation**.
 
-Les opérateurs de concaténation sont la somme (+) et la multiplication
-(*).
+Les opérateurs de concaténation sont la somme (+) et la multiplication (*).
 
 .. admonition:: Exemple
 
@@ -93,7 +87,7 @@ Les opérateurs de concaténation sont la somme (+) et la multiplication
 Un type construit : la liste
 ----------------------------
 
-En Python, il existe le type **list** qui permet de regrouper **plusieurs valeurs** dans une même variable. Les valeurs d’une liste sont notées entre crochets et séparées par une virgule.
+En Python, il existe le type **list** qui permet de regrouper **plusieurs valeurs** dans une même variable. Les valeurs d'une liste sont notées entre crochets et séparées par une virgule.
 
 .. admonition:: Exemple
 

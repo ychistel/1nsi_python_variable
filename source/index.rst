@@ -5,7 +5,6 @@ Les variables en python
    :maxdepth: 1
    
    content/variable.rst
-   content/exercice.rst
-   content/tp_turtle.rst
-
-   
+   content/exercice_1.rst
+   content/liste_tuple.rst
+   content/exercice_2.rst
