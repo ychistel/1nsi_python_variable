@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercices : n-plets et tableaux &#8212; &lt;a href=&#34;https://ychistel.github.io/cours/content/1nsi.html&#34;&gt;NSI&lt;/a&gt;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6315c5d3" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/exercice_2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="Une variable à valeurs multiples" href="liste_tuple.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title"><a href="https://ychistel.github.io/cours/content/1nsi.html">NSI</a></p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable.html">La variable en programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice_1.html">Exercices : variables et types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liste_tuple.html">Une variable à valeurs multiples</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercices : n-plets et tableaux</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/exercice_2.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercices : n-plets et tableaux</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-6">Exercice 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-7">Exercice 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-8">Exercice 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-9">Exercice 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-10">Exercice 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-11">Exercice 11</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="exercices-n-plets-et-tableaux">
+<h1>Exercices : n-plets et tableaux<a class="headerlink" href="#exercices-n-plets-et-tableaux" title="Lien vers cette rubrique">#</a></h1>
+<section id="section-6">
+<h2>Exercice 6<a class="headerlink" href="#section-6" title="Lien vers cette rubrique">#</a></h2>
+<p>On donne les variables <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">(8,6,4,2)</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">[3,5,7]</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Quelle variable est de type <code class="docutils literal notranslate"><span class="pre">list</span></code> ? Quel est le type de l’autre variable ?</p></li>
+<li><p>Donner une instruction qui accède à la dernière valeur des variables <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+<li><p>Est-il possible de modifier la première valeur de la variable <code class="docutils literal notranslate"><span class="pre">a</span></code> par la valeur 0 ?</p></li>
+<li><p>Est-il possible de modifier la première valeur de la variable <code class="docutils literal notranslate"><span class="pre">b</span></code> par la valeur 1 ?</p></li>
+<li><p>Soit <code class="docutils literal notranslate"><span class="pre">c</span></code> la variable égale à la somme des valeurs de la variable <code class="docutils literal notranslate"><span class="pre">a</span></code> divisée par la somme des valeurs de la variable <code class="docutils literal notranslate"><span class="pre">b</span></code>. Écrire une instruction qui calcule la valeur de <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
+</ol>
+</section>
+<section id="section-7">
+<h2>Exercice 7<a class="headerlink" href="#section-7" title="Lien vers cette rubrique">#</a></h2>
+<p>L’aire et le périmètre d’un rectangle se calcule avec les formules suivantes:</p>
+<ul class="simple">
+<li><p>Aire du rectangle : <code class="docutils literal notranslate"><span class="pre">aire</span> <span class="pre">=</span> <span class="pre">Largeur</span> <span class="pre">*</span> <span class="pre">longueur</span></code></p></li>
+<li><p>Périmètre du rectangle : <code class="docutils literal notranslate"><span class="pre">perimetre</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">(Largeur</span> <span class="pre">+</span> <span class="pre">longueur)</span></code></p></li>
+</ul>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> est un n-uplet qui contient la <code class="docutils literal notranslate"><span class="pre">largeur</span></code> et la <code class="docutils literal notranslate"><span class="pre">longueur</span></code> du rectangle.</p>
+<ol class="arabic simple">
+<li><p>Initialiser la variable <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> avec une largeur et une longueur égales respectivement à 7 et 12.</p></li>
+<li><p>Créer une variable <code class="docutils literal notranslate"><span class="pre">perimetre</span></code> qui calcule le périmètre du rectangle.</p></li>
+<li><p>Créer une variable <code class="docutils literal notranslate"><span class="pre">aire</span></code> qui calcule l’aire du rectangle.</p></li>
+<li><p>Ajouter une instruction d’affichage qui donne les valeurs des différentes variables.</p></li>
+</ol>
+</section>
+<section id="section-8">
+<h2>Exercice 8<a class="headerlink" href="#section-8" title="Lien vers cette rubrique">#</a></h2>
+<p>La société « The Box » fabrique des boites en carton recyclable. Elle propose sur son site internet la fabrication de boites de forme parallélépipèdique à partir des trois dimensions <code class="docutils literal notranslate"><span class="pre">largeur</span></code>, <code class="docutils literal notranslate"><span class="pre">longueur</span></code> et <code class="docutils literal notranslate"><span class="pre">hauteur</span></code>.</p>
+<p>On définit la variable <code class="docutils literal notranslate"><span class="pre">boite</span></code> de type <code class="docutils literal notranslate"><span class="pre">list</span></code> contenant ces trois dimensions.</p>
+<ol class="arabic">
+<li><p>Quelle est la valeur de la variable <code class="docutils literal notranslate"><span class="pre">boite</span></code> si on fabrique une boite qui a une largeur de 50 cm, une longueur de 75 cm et une hauteur de 40 cm.</p></li>
+<li><p>La variable <code class="docutils literal notranslate"><span class="pre">volume</span></code> calcule le volume d’une boite. Écrire une formule qui calcule la valeur du volume de la boite avec les valeurs de la variable <code class="docutils literal notranslate"><span class="pre">boite</span></code>.</p></li>
+<li><p>Le prix en euros d’une boite est calculé à partir du volume de celle-ci avec la formule suivante : <code class="docutils literal notranslate"><span class="pre">prix</span> <span class="pre">=</span> <span class="pre">volume</span> <span class="pre">*</span> <span class="pre">0.015</span> <span class="pre">+</span> <span class="pre">1.70</span></code>. Créer la variable <code class="docutils literal notranslate"><span class="pre">prix</span></code> qui donne le prix d’une boite.</p></li>
+<li><p>Compléter l’instruction suivante qui affiche les caractéritiques d’une boite en utilisant les différentes variables ci-dessus.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Une boite de dimensions ... x ... x ... a un volume de ... pour un prix de ... euros.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="section-9">
+<h2>Exercice 9<a class="headerlink" href="#section-9" title="Lien vers cette rubrique">#</a></h2>
+<p>Voici quelques exemples de températures annuelles moyennes pour des villes en France :</p>
+<ul class="simple">
+<li><p>Paris : 12,2 °C</p></li>
+<li><p>Lyon : 11,9 °C</p></li>
+<li><p>Marseille : 14,2 °C</p></li>
+<li><p>Bordeaux : 13,4 °C</p></li>
+<li><p>Strasbourg : 10,4 °C</p></li>
+<li><p>Nice : 14,5 °C</p></li>
+<li><p>Caen : 11,6 °C</p></li>
+</ul>
+<p>On rassemble les données ci-dessus dans 2 variables contenant les villes et les températures.</p>
+<ol class="arabic simple">
+<li><p>Créer la variable <code class="docutils literal notranslate"><span class="pre">villes</span></code> contenant les différentes villes.</p></li>
+<li><p>Créer la variable <code class="docutils literal notranslate"><span class="pre">temp</span></code> contenant les tempéraures des différentes villes en respectant le même ordre.</p></li>
+<li><p>La variable <code class="docutils literal notranslate"><span class="pre">i</span></code> est l’indice de position dans les variables <code class="docutils literal notranslate"><span class="pre">villes</span></code> et <code class="docutils literal notranslate"><span class="pre">temp</span></code>. Quelles sont les valeurs possibles de la variable <code class="docutils literal notranslate"><span class="pre">i</span></code> ?</p></li>
+<li><p>Écrire un programme qui affiche le nom d’une ville et sa température moyenne.</p></li>
+</ol>
+</section>
+<section id="section-10">
+<h2>Exercice 10<a class="headerlink" href="#section-10" title="Lien vers cette rubrique">#</a></h2>
+<p>On considère les variables <code class="docutils literal notranslate"><span class="pre">jour</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code> et <code class="docutils literal notranslate"><span class="pre">mois</span></code>.</p>
+<ul class="simple">
+<li><p>La variable <code class="docutils literal notranslate"><span class="pre">jour</span></code> contient des chaines de caractères associées aux jours de la semaine.</p></li>
+<li><p>La variable <code class="docutils literal notranslate"><span class="pre">date</span></code> contient des nombres entiers de 1 à 31</p></li>
+<li><p>La variable <code class="docutils literal notranslate"><span class="pre">mois</span></code> contient des chaines de caractères associées aux mois de l’année.</p></li>
+</ul>
+<ol class="arabic">
+<li><p>De quels types sont les variables <code class="docutils literal notranslate"><span class="pre">jour</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code> et <code class="docutils literal notranslate"><span class="pre">mois</span></code>?</p></li>
+<li><p>Créez ces trois variables dans un éditeur Python ou un notebook CAPYTALE.</p></li>
+<li><p>Dans l’interpréteur, écrire les instructions Python qui permettent d’obtenir les valeurs:</p>
+<ol class="loweralpha simple">
+<li><p>lundi</p></li>
+<li><p>30</p></li>
+<li><p>septembre</p></li>
+</ol>
+</li>
+<li><p>On donne l’instruction suivante:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jour</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="p">[</span><span class="mi">27</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">mois</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<ol class="loweralpha simple">
+<li><p>Que renvoie la commande dans l’interpréteur.</p></li>
+<li><p>Modifier cette commande pour écrire la date du ce jour.</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="section-11">
+<h2>Exercice 11<a class="headerlink" href="#section-11" title="Lien vers cette rubrique">#</a></h2>
+<p>Le type <code class="docutils literal notranslate"><span class="pre">tuple</span></code> est immutable et le type <code class="docutils literal notranslate"><span class="pre">list</span></code> est mutable.</p>
+<ol class="arabic">
+<li><p>On écrit le code suivant :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Quel est l’affichage après exécution de ce programme ?</p>
+</li>
+<li><p>On complète ce programme en ajoutant les 2 instructions suivantes :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Albert&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Quel est l’affichage après exécution de ce programme ? Comment le justifier ?</p>
+</li>
+<li><p>On recommence avec le code suivant :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Quel est l’affichage après exécution de ce programme ?</p>
+</li>
+<li><p>On complète ce programme en ajoutant les 2 instructions suivantes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Quel est l’affichage après exécution de ce programme ? Comment le justifier ?</p>
+</li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="liste_tuple.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Une variable à valeurs multiples</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-6">Exercice 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-7">Exercice 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-8">Exercice 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-9">Exercice 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-10">Exercice 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-11">Exercice 11</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Yannick Chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023,Yannick Chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

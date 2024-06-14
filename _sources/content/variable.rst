@@ -1,104 +1,111 @@
-.. 1NSI
+La variable en programmation
+=============================
 
-La variable en Python
-=====================
+Dans les langages de programmation, une ``variable`` est associée à un espace mémoire qui va contenir une valeur. Toute variable possède un ``type``. Il existe de nombreux types dont les plus courants sont les nombres entiers ``int``, les nombres flottants (à virgule) ``float`` et les chaines de caractères ``str``.
 
-.. toctree::
-   :maxdepth: 1
-   
-Dans les langages de programmation, une **variable** est définie par un nom et associée à un espace mémoire.
+Une ``variable`` est définie par un nom. Le nom peut être une lettre, un mot de plusieurs lettres ou une combinaison alphanumérique c'est à dire un mélange de lettres et de chiffres.
 
--  le nom de la variable peut être une lettre, un mot de plusieurs lettres ou une combinaison alphanumérique (lettres et chiffres) mais qui ne commence pas par un chiffre.
--  l’espace mémoire permet de stocker la valeur associée à la variable pendant l’exécution du programme.
+Voici quelques exemples de noms de variables:
 
-.. admonition:: Exemple
-
-   Voici des exemples de variables:
-
-   - Une variable qui représente un nombre : `i`, `n`, `x`, `y`, etc.
-   - Une variable qui représente une chaine de caractères : `mot`, `nom`, `texte`, etc.
-   - Deux variables qui représentent des grandeurs similaires peuvent avoir des noms proches mais qui se différencient par un chiffre placé à la fin : `mot1` et `mot2` ou `x_1` et `x_2`, etc.
-
-Créer une variable en python
-----------------------------
-
-Donner une valeur à une variable est une **affectation**. L’affectation se fait avec le signe mathématique égal ``=``.
-
-Pour affecter une valeur à une variable, on écrit toujours en premier le nom de la variable, puis le signe ``=`` et enfin la valeur qu’on lui
-attribue.
-
-.. admonition:: Exemple
-
-   On déclare trois variables `a`, `b` et `c` en affectant respectivement les valeurs 4, 5 et 6.
-
-   >>> a=4
-   >>> b=5
-   >>> c=6
+-   Pour représenter un nombre : ``i``, ``n``, ``x``, ``y``.
+-   Pour représenter une chaine de caractères : ``mot``, ``nom``, ``texte``.
 
 .. note::
 
-   Souvent, on écrit une affection par ligne. Il est possible d’affecter plusieurs variables sur une même ligne.
+    Lorsque deux variables représentent des grandeurs similaires, on choisit des noms proches mais qui se différencient par un chiffre placé à la fin : ``mot1`` et ``mot2`` ou ``x_1`` et ``x_2``.
 
-   >>> a,b,c = 4,5,6 # a vaut 4, b vaut 5 et c vaut 6
-   >>> x,y = 1 # x vaut 1 et y vaut 1
-
-Les types de variables
+La variable en python
 ----------------------
 
-Une variable peut mémoriser différents **types** de valeurs :
+On crée une variable en Python en écrivant une instruction qui contient le ``nom`` de la variable suivi du signe ``=`` et d'une ``valeur initiale``.
 
--  des nombres entiers : la variable est de type ``int``
+.. code:: python
 
-   >>> n = 7 # n est de type int
-   
--  des nombres à virgule : la variable est de type ``float``
-
-   >>> x = 1.25 # x est de type float; attention la virgule est un point!
-   
--  des chaines de caractères : la variable est de type ``str`` ; un chaine de caractères se note entre quote simple ou double!
-
-   >>> m = "bonjour" # m est de type str
-
--  des booléens ``True`` ou ``False``: la variable est de type ``bool``.
-
-   >>> t = False
+    variable = valeur initiale
 
 
-Modifier la valeur d'une variable
----------------------------------
+Par exemple, on crée les variables ``a`` et ``b`` en affectant respectivement les valeurs 4 et 5.
 
-On peut modifier la valeur d'une variable
+>>> a = 4
+>>> b = 5
 
-#. Sans tenir compte de sa valeur actuelle. Il suffit de lui affecter une nouvelle valeur.
+.. note::
+    
+     Donner une valeur à une variable est une **affectation**. 
 
-   >>> a = 2
-   >>> a = 3 # on a modifié la variable ``a``
+Souvent, on écrit une affection par ligne. Il est possible d’affecter plusieurs variables sur une même ligne comme sur l'exemple suivant:
 
-#. En tenant compte de sa valeur. Par exemple, on souhaite ajouter 2 à la valeur d'une variable ``x``. On écrit alors l'instruction:
+>>> a,b = 4,5 # a vaut 4 et b vaut 5
 
-   >>> x = 3
-   >>> x = x + 2
 
-   Le langage procède de droite à gauche:
+Les types de variables
+-----------------------
 
-   - il calcule d'abord la valeur ``x+2`` avec la valeur actuelle de la variable ``x``;
-   - ensuite il affecte la nouvelle valeur à la variable ``x``.
+Une variable est de type unique. Ce type est attribué avec la valeur donnée à la variable.
 
-Plusieurs valeurs dans une variable
------------------------------------
+-   Si on affecte un nombre entier à une variable alors elle est de type ``int`` (abréviation de integer).
 
-Une variable peut contenir plusieur valeurs. Dans ce cas, la variable est de type ``tableau``. On accède aux valeurs avec les **indices** de leur position dans le tableau.
+    >>> n = 8
+    >>> type(n)
+    <class 'int'>
 
-Les valeurs d'un tableau se notent entre crochets et chaque valeur est séparée des autres par une virgule.
+-   Si on affecte un nombre à virgule à une variable, alors elle est de type ``float``.
 
-.. admonition:: Exemple
+    >>> a = 1.36
+    >>> type(a)
+    <class 'float'>
 
-   On veut une variable qui contient les valeurs 3, 4 et 5:
+-   Si on affecte une chaine de caractères qui se note entre des guillemets, alors elle est de type ``str`` (abréviation de string).
 
-   >>> t = [3,4,5]
-   >>> t[0]
-   3
-   >>> t[1]
-   4
-   >>> t[2]
-   5
+    >>> mot = 'bonjour'
+    >>> type(mot)
+    <class 'str'>
+
+-   Si on affecte la valeur ``True`` ou ``False`` à une variable, alors est de type ``bool`` qui signifie **booléen**.
+
+    >>> b = True
+    >>> type(b)
+    <class 'bool'>
+
+.. caution::
+
+    -   La virgule d'un nombre de type ``float`` est notée par un point. Par exemple ``2,5`` se note ``2.5``.
+    -   Les guillemets se notent avec l'apostrophe (single quote) ou avec les guillemets (double quote). Par exemple, la chaine de valeur "bonjour" se note ``'bonjour'`` ou ``"bonjour"``.
+
+
+Valeurs d'une variable
+-----------------------
+
+Une variable créée dans un programme peut changer de valeur. Voici différentes situations conduisant à un changement de valeur.
+
+#.  Une variable peut changer de valeur en lui affectant une nouvelle valeur. Par exemple, une variable ``x`` peut être initialisée à 0 puis modifiée avec la valeur 5.
+
+    >>> x = 0
+    >>> x = 5
+
+#.  Une variable peut changer de valeur en tenant compte de sa valeur actuelle. Par exemple, une variable ``x`` est initialisée avec la valeur 3, puis modifiée en lui ajoutant la valeur 2. On écrit alors l'instruction:
+
+    >>> x = 3
+    >>> x = x + 2
+    >>> x
+    5
+
+    Le langage procède de droite à gauche:
+
+    -   il calcule d'abord la valeur ``x+2`` avec la valeur actuelle de la variable ``x``;
+    -   ensuite il affecte la nouvelle valeur à la variable ``x``.
+
+#.  En changeant de valeur, une variable peut changer de type. Par exemple, une variable ``x`` initialisée à 0 est de type ``int``. Si on divise la valeur de la variable ``x`` par le nombre 2, le type de la variable ``x`` est alors ``float``.
+
+    >>> x = 0
+    >>> x = x / 2
+    >>> x
+    0.0
+    >>> type(x)
+    <class 'float'>
+
+.. note::
+
+    Python est un langage à typage dynamique. Cela signifie que les variables créées peuvent changer de type au cours du programme. Il faut y être attentif car cela peut engendrer des erreurs (bugs).
+
+    Certains langages de programmation sont de typage statique ce qui interdit le changement de type des variables.

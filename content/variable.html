@@ -1,53 +1,55 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="fr" >
+<html lang="fr" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>La variable en Python &#8212; NSI</title>
+    <title>La variable en programmation &#8212; &lt;a href=&#34;https://ychistel.github.io/cours/content/1nsi.html&#34;&gt;NSI&lt;/a&gt;</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6315c5d3" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=bf059b8c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/variable';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Exercices" href="exercice.html" />
+    <link rel="next" title="Exercices : variables et types" href="exercice_1.html" />
     <link rel="prev" title="Les variables en python" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
@@ -58,28 +60,23 @@
 
   
   
-  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -101,12 +98,20 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -121,6 +126,7 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
@@ -130,17 +136,27 @@
   
   
   
-    <p class="title logo__title">NSI</p>
+    <p class="title logo__title"><a href="https://ychistel.github.io/cours/content/1nsi.html">NSI</a></p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">La variable en Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tp_turtle.html">TP turtle</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">La variable en programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice_1.html">Exercices : variables et types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liste_tuple.html">Une variable à valeurs multiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice_2.html">Exercices : n-plets et tableaux</a></li>
 </ul>
 
     </div>
@@ -156,7 +172,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -165,14 +181,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -247,6 +263,7 @@
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -257,6 +274,7 @@ document.write(`
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -264,9 +282,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -277,7 +295,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>La variable en Python</h1>
+    <h1>La variable en programmation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -287,10 +305,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-une-variable-en-python">Créer une variable en python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-variable-en-python">La variable en python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types-de-variables">Les types de variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifier-la-valeur-d-une-variable">Modifier la valeur d’une variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plusieurs-valeurs-dans-une-variable">Plusieurs valeurs dans une variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valeurs-d-une-variable">Valeurs d’une variable</a></li>
 </ul>
             </nav>
         </div>
@@ -300,88 +317,97 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section id="la-variable-en-python">
-<h1>La variable en Python<a class="headerlink" href="#la-variable-en-python" title="Lien permanent vers cette rubrique">#</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-<p>Dans les langages de programmation, une <strong>variable</strong> est définie par un nom et associée à un espace mémoire.</p>
+  <section id="la-variable-en-programmation">
+<h1>La variable en programmation<a class="headerlink" href="#la-variable-en-programmation" title="Lien vers cette rubrique">#</a></h1>
+<p>Dans les langages de programmation, une <code class="docutils literal notranslate"><span class="pre">variable</span></code> est associée à un espace mémoire qui va contenir une valeur. Toute variable possède un <code class="docutils literal notranslate"><span class="pre">type</span></code>. Il existe de nombreux types dont les plus courants sont les nombres entiers <code class="docutils literal notranslate"><span class="pre">int</span></code>, les nombres flottants (à virgule) <code class="docutils literal notranslate"><span class="pre">float</span></code> et les chaines de caractères <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<p>Une <code class="docutils literal notranslate"><span class="pre">variable</span></code> est définie par un nom. Le nom peut être une lettre, un mot de plusieurs lettres ou une combinaison alphanumérique c’est à dire un mélange de lettres et de chiffres.</p>
+<p>Voici quelques exemples de noms de variables:</p>
 <ul class="simple">
-<li><p>le nom de la variable peut être une lettre, un mot de plusieurs lettres ou une combinaison alphanumérique (lettres et chiffres) mais qui ne commence pas par un chiffre.</p></li>
-<li><p>l’espace mémoire permet de stocker la valeur associée à la variable pendant l’exécution du programme.</p></li>
+<li><p>Pour représenter un nombre : <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p>Pour représenter une chaine de caractères : <code class="docutils literal notranslate"><span class="pre">mot</span></code>, <code class="docutils literal notranslate"><span class="pre">nom</span></code>, <code class="docutils literal notranslate"><span class="pre">texte</span></code>.</p></li>
 </ul>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
-<p>Voici des exemples de variables:</p>
-<ul class="simple">
-<li><p>Une variable qui représente un nombre : <cite>i</cite>, <cite>n</cite>, <cite>x</cite>, <cite>y</cite>, etc.</p></li>
-<li><p>Une variable qui représente une chaine de caractères : <cite>mot</cite>, <cite>nom</cite>, <cite>texte</cite>, etc.</p></li>
-<li><p>Deux variables qui représentent des grandeurs similaires peuvent avoir des noms proches mais qui se différencient par un chiffre placé à la fin : <cite>mot1</cite> et <cite>mot2</cite> ou <cite>x_1</cite> et <cite>x_2</cite>, etc.</p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lorsque deux variables représentent des grandeurs similaires, on choisit des noms proches mais qui se différencient par un chiffre placé à la fin : <code class="docutils literal notranslate"><span class="pre">mot1</span></code> et <code class="docutils literal notranslate"><span class="pre">mot2</span></code> ou <code class="docutils literal notranslate"><span class="pre">x_1</span></code> et <code class="docutils literal notranslate"><span class="pre">x_2</span></code>.</p>
 </div>
-<section id="creer-une-variable-en-python">
-<h2>Créer une variable en python<a class="headerlink" href="#creer-une-variable-en-python" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Donner une valeur à une variable est une <strong>affectation</strong>. L’affectation se fait avec le signe mathématique égal <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
-<p>Pour affecter une valeur à une variable, on écrit toujours en premier le nom de la variable, puis le signe <code class="docutils literal notranslate"><span class="pre">=</span></code> et enfin la valeur qu’on lui
-attribue.</p>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
-<p>On déclare trois variables <cite>a</cite>, <cite>b</cite> et <cite>c</cite> en affectant respectivement les valeurs 4, 5 et 6.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="mi">4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">=</span><span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">=</span><span class="mi">6</span>
+<section id="la-variable-en-python">
+<h2>La variable en python<a class="headerlink" href="#la-variable-en-python" title="Lien vers cette rubrique">#</a></h2>
+<p>On crée une variable en Python en écrivant une instruction qui contient le <code class="docutils literal notranslate"><span class="pre">nom</span></code> de la variable suivi du signe <code class="docutils literal notranslate"><span class="pre">=</span></code> et d’une <code class="docutils literal notranslate"><span class="pre">valeur</span> <span class="pre">initiale</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="n">valeur</span> <span class="n">initiale</span>
 </pre></div>
 </div>
+<p>Par exemple, on crée les variables <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> en affectant respectivement les valeurs 4 et 5.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Souvent, on écrit une affection par ligne. Il est possible d’affecter plusieurs variables sur une même ligne.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span> <span class="c1"># a vaut 4, b vaut 5 et c vaut 6</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># x vaut 1 et y vaut 1</span>
-</pre></div>
+<p>Donner une valeur à une variable est une <strong>affectation</strong>.</p>
 </div>
+<p>Souvent, on écrit une affection par ligne. Il est possible d’affecter plusieurs variables sur une même ligne comme sur l’exemple suivant:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span> <span class="c1"># a vaut 4 et b vaut 5</span>
+</pre></div>
 </div>
 </section>
 <section id="les-types-de-variables">
-<h2>Les types de variables<a class="headerlink" href="#les-types-de-variables" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Une variable peut mémoriser différents <strong>types</strong> de valeurs :</p>
+<h2>Les types de variables<a class="headerlink" href="#les-types-de-variables" title="Lien vers cette rubrique">#</a></h2>
+<p>Une variable est de type unique. Ce type est attribué avec la valeur donnée à la variable.</p>
 <ul>
-<li><p>des nombres entiers : la variable est de type <code class="docutils literal notranslate"><span class="pre">int</span></code></p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># n est de type int</span>
+<li><p>Si on affecte un nombre entier à une variable alors elle est de type <code class="docutils literal notranslate"><span class="pre">int</span></code> (abréviation de integer).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p>des nombres à virgule : la variable est de type <code class="docutils literal notranslate"><span class="pre">float</span></code></p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.25</span> <span class="c1"># x est de type float; attention la virgule est un point!</span>
+<li><p>Si on affecte un nombre à virgule à une variable, alors elle est de type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.36</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p>des chaines de caractères : la variable est de type <code class="docutils literal notranslate"><span class="pre">str</span></code> ; un chaine de caractères se note entre quote simple ou double!</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="s2">&quot;bonjour&quot;</span> <span class="c1"># m est de type str</span>
+<li><p>Si on affecte une chaine de caractères qui se note entre des guillemets, alors elle est de type <code class="docutils literal notranslate"><span class="pre">str</span></code> (abréviation de string).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mot</span> <span class="o">=</span> <span class="s1">&#39;bonjour&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p>des booléens <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>: la variable est de type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="kc">False</span>
+<li><p>Si on affecte la valeur <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code> à une variable, alors est de type <code class="docutils literal notranslate"><span class="pre">bool</span></code> qui signifie <strong>booléen</strong>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bool&#39;&gt;</span>
 </pre></div>
 </div>
 </li>
 </ul>
+<div class="admonition caution">
+<p class="admonition-title">Prudence</p>
+<ul class="simple">
+<li><p>La virgule d’un nombre de type <code class="docutils literal notranslate"><span class="pre">float</span></code> est notée par un point. Par exemple <code class="docutils literal notranslate"><span class="pre">2,5</span></code> se note <code class="docutils literal notranslate"><span class="pre">2.5</span></code>.</p></li>
+<li><p>Les guillemets se notent avec l’apostrophe (single quote) ou avec les guillemets (double quote). Par exemple, la chaine de valeur « bonjour » se note <code class="docutils literal notranslate"><span class="pre">'bonjour'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;bonjour&quot;</span></code>.</p></li>
+</ul>
+</div>
 </section>
-<section id="modifier-la-valeur-d-une-variable">
-<h2>Modifier la valeur d’une variable<a class="headerlink" href="#modifier-la-valeur-d-une-variable" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>On peut modifier la valeur d’une variable</p>
+<section id="valeurs-d-une-variable">
+<h2>Valeurs d’une variable<a class="headerlink" href="#valeurs-d-une-variable" title="Lien vers cette rubrique">#</a></h2>
+<p>Une variable créée dans un programme peut changer de valeur. Voici différentes situations conduisant à un changement de valeur.</p>
 <ol class="arabic">
-<li><p>Sans tenir compte de sa valeur actuelle. Il suffit de lui affecter une nouvelle valeur.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># on a modifié la variable ``a``</span>
+<li><p>Une variable peut changer de valeur en lui affectant une nouvelle valeur. Par exemple, une variable <code class="docutils literal notranslate"><span class="pre">x</span></code> peut être initialisée à 0 puis modifiée avec la valeur 5.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
 </div>
 </li>
-<li><p>En tenant compte de sa valeur. Par exemple, on souhaite ajouter 2 à la valeur d’une variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. On écrit alors l’instruction:</p>
+<li><p>Une variable peut changer de valeur en tenant compte de sa valeur actuelle. Par exemple, une variable <code class="docutils literal notranslate"><span class="pre">x</span></code> est initialisée avec la valeur 3, puis modifiée en lui ajoutant la valeur 2. On écrit alors l’instruction:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">5</span>
 </pre></div>
 </div>
 <p>Le langage procède de droite à gauche:</p>
@@ -390,24 +416,21 @@ attribue.</p>
 <li><p>ensuite il affecte la nouvelle valeur à la variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
 </ul>
 </li>
-</ol>
-</section>
-<section id="plusieurs-valeurs-dans-une-variable">
-<h2>Plusieurs valeurs dans une variable<a class="headerlink" href="#plusieurs-valeurs-dans-une-variable" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Une variable peut contenir plusieur valeurs. Dans ce cas, la variable est de type <code class="docutils literal notranslate"><span class="pre">tableau</span></code>. On accède aux valeurs avec les <strong>indices</strong> de leur position dans le tableau.</p>
-<p>Les valeurs d’un tableau se notent entre crochets et chaque valeur est séparée des autres par une virgule.</p>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
-<p>On veut une variable qui contient les valeurs 3, 4 et 5:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="go">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="go">5</span>
+<li><p>En changeant de valeur, une variable peut changer de type. Par exemple, une variable <code class="docutils literal notranslate"><span class="pre">x</span></code> initialisée à 0 est de type <code class="docutils literal notranslate"><span class="pre">int</span></code>. Si on divise la valeur de la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> par le nombre 2, le type de la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> est alors <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
 </pre></div>
 </div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Python est un langage à typage dynamique. Cela signifie que les variables créées peuvent changer de type au cours du programme. Il faut y être attentif car cela peut engendrer des erreurs (bugs).</p>
+<p>Certains langages de programmation sont de typage statique ce qui interdit le changement de type des variables.</p>
 </div>
 </section>
 </section>
@@ -420,8 +443,8 @@ attribue.</p>
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../index.html"
@@ -433,11 +456,11 @@ attribue.</p>
       </div>
     </a>
     <a class="right-next"
-       href="exercice.html"
+       href="exercice_1.html"
        title="page suivante">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Exercices</p>
+        <p class="prev-next-title">Exercices : variables et types</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -450,16 +473,16 @@ attribue.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-une-variable-en-python">Créer une variable en python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-variable-en-python">La variable en python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-types-de-variables">Les types de variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifier-la-valeur-d-une-variable">Modifier la valeur d’une variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plusieurs-valeurs-dans-une-variable">Plusieurs valeurs dans une variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valeurs-d-une-variable">Valeurs d’une variable</a></li>
 </ul>
   </nav></div>
 
@@ -481,6 +504,7 @@ Par Yannick Chistel
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023,Yannick Chistel.
@@ -507,8 +531,8 @@ Par Yannick Chistel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>
